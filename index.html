@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Simple HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="http://unpkg.com/tone"></script>
+    <script type="module">
+        import Chords from './src/chords.js';
+
+        const chords = new Chords();
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Attach event listener to the button
+            document.getElementById('cchord').addEventListener('click', () => {chords.playChord("C", 1)});
+        });
+    </script>
+</head>
+
+<body>
+    <button id="cchord">Play C chord.</button>
+</body>
+
+</html>
