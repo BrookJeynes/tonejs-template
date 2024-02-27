@@ -17,13 +17,11 @@ export default class Chords {
      * @param {number} duration - How long to play the chord for.
      */
     playChord(chord, duration) {
-        switch (chord) {
-            case "C": 
-                this.play(this.chords["C"], duration);
-                break;
-            default:
-                console.error("[ERROR] Chord does not exist.");
-                break;
+        chord = this.chords[chord];
+        if (chord == undefined) {
+            console.error("[ERROR] Chord does not exist.");
+        } else {
+            this.play(chord, duration);
         }
     }
 
